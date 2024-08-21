@@ -21,6 +21,11 @@ jobs:
       - name: Run go test
         run: go test ./... -cover
 
+      - name: Run gosec
+        uses: securego/gosec@master
+        with:
+          args: ./...
+
   style:
     name: Style
     runs-on: ubuntu-latest
